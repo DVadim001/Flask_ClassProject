@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Задать вопрос</title>
 </head>
 <body>
-
+<h1>Задать вопрос</h1>
+<form action="/ask" method="post">
+    <label for="title">Заголовок вопроса:</label><br>
+    <input type="text" id="title" name="title" required><br>
+    <label for="content">Содержание вопроса:</label><br>
+    <textarea name="content" id="conten" cols="30" rows="10" required></textarea><br>
+    <input type="submit" value="Отправить">
+</form>
 </body>
 </html>
