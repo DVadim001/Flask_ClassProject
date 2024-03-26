@@ -1,6 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
+from user.user import user_bp
+from question.questions import comment_bp
+
 
 app = Flask(__name__)
+app.register_blueprint(user_bp)
+app.register_blueprint(comment_bp)
+
+
+# Настройка защиты для формы
+app.config['CSRF ENABLED'] = True
+app.config['SECRET_KEY'] = 'r7rfh8488dmdkdjo3d933d'
 
 # Простейшая БД для хранения вопросов и ответов
 questions = [
@@ -14,8 +24,7 @@ answers = [
 ]
 
 
-
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     return render_template('index.html', questions=questions)
 
