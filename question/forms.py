@@ -9,6 +9,3 @@ class CommentForm(FlaskForm):
     title = StringField('Тема', validators=[DataRequired('Заполните это поле')])
     comment = TextAreaField('Коммент', validators=[DataRequired('Заполните это поле')])
     button = SubmitField('Зарегистрироваться')
-
-
-

@@ -10,6 +10,7 @@ def home_user():
     login_url = '</br><a href="/user/login">Логин</a></br>'
     return f'Привет. Выберите действие {reg_url+login_url}'
 
+
 @user_bp.route('/register')
 def register_user():
     # Назначение переменной для связки с формой
